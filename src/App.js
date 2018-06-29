@@ -4,13 +4,12 @@ import './App.css';
 import Fetcher from './Search/search.js';
 import Searcher from './Searcher/searcher.js';
 import Header from './Header/header.js';
+import Loading from './Loading/loading.js';
+import Result from './Results/results.js';
 
 
-function FlightRow(props){
-  const flight=props.flight;
-  return <div > {flight.cityFrom} - {flight.cityTo} - {flight.conversion.EUR}</div>
 
-}
+
 
 export default class App extends React.Component {
 
@@ -25,10 +24,10 @@ export default class App extends React.Component {
 
   renderResultFromFetcher(data){
       if (data === null){
-                 return <div> Loading.. </div>
+                 return <Loading />
              } else {
-                  return (<div>
-                      {data.map((flight) => <FlightRow key={flight.id} flight={flight}/>)}
+                  return (<div className="resultsPage">
+                      {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
                    </div>
           );
        }

@@ -31,3 +31,31 @@ body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.resultsPage {
+  margin: auto;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  border: 2px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+  overflow: hidden;
+  animation-name: resultsFade;
+  animation-duration: 1s;
+}
+
+@keyframes resultsFade {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
