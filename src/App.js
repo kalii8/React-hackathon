@@ -63,16 +63,19 @@ return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
              } else if (data.length == 0){
                 return <div>No flights </div>;
              } else {
-                  return (<div className="resultsPage">
-                      {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
-                   </div>
-                    );
-                  }
+                  return (
+                    <div className="background">
+                        <div className="resultsPage">
+                        <div class="resultHead"><span className="cell">From</span><span className="cell">To</span><span className="cell">Price</span><span className="cell">Departs</span><span className="cell">Arrives</span></div>
+                            {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
+                        </div>
+                    </div>
+          );
        }
-  
+    }
 
 
-render(){
+render() {
     return (
         
         <div>

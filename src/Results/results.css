@@ -1,0 +1,46 @@
+.resultRow {
+    height: 30px;
+    margin: 5px;
+    background-color: rgba(245, 245, 245, 0.781);
+    width: 400px;
+    display: flex;
+    align-content: center;
+    padding: 0px 20px 0px 20px;
+    box-shadow: 2px 2px 2px gainsboro;
+    animation-name: resultsIn;
+    animation-duration: 1s;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.resultHead {
+    height: 30px;
+    margin: 5px;
+    background-color: rgba(245, 245, 245, 0.781);
+    width: 400px;
+    display: flex;
+    align-content: center;
+    padding: 0px 20px 0px 20px;
+    box-shadow: 2px 2px 2px gainsboro;
+    animation-name: resultsIn;
+    animation-duration: 1s;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@keyframes resultsIn {
+    from {
+        margin-left: -1000px;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+.cell {
+    border-left: 1px solid rgb(255, 255, 255);
+    /* border-right: 1px solid rgb(255, 255, 255); */
+    padding: 5px 10px;
+    color: rgb(100, 100, 100);
+    width: 70px;
+}

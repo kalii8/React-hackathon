@@ -18,9 +18,14 @@
 @keyframes loadFade {
     from {
         opacity: 0;
+        /* height: 0;
+        width: 0; */
     }
     to {
         opacity: 1;
+        /* width:200px;
+        height: 100px;
+        margin-top: 150px; */
     }
 }
 .plane {
