@@ -101,7 +101,9 @@ render() {
             <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} 
                       arrival={this.state.selectedArrivalCity} 
                       departureDate={this.convertInputDate(this.state.selectedFromDate)}
-                      arrivalDate={this.convertInputDate(this.state.selectedToDate)}  />
+                      arrivalDate={this.convertInputDate(this.state.selectedToDate)}  
+                      directFlight={this.state.directFlights}
+                      />
             <div className="background">
                 <div className="mainPage">
                     <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
