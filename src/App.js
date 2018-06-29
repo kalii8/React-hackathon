@@ -19,7 +19,9 @@ export default class App extends React.Component {
       this.state = {
           data: null,
           selectedDepartureCity: null,
-          selectedArrivalCity: null
+          selectedArrivalCity: null,
+          selectedFromDate: null,
+          selectedToDate: null,
       }
   }
 
@@ -35,6 +37,22 @@ selectArrivalCity(event){
   });
 }
 
+selectFromDate(event){
+  this.setState({
+    selectedFromDate:event.target.value
+  })
+}
+
+selectToDate(event){
+  this.setState({
+    selectedToDate:event.target.value
+  })
+}
+
+convertInputDate(date){
+
+}
+
   renderResultFromFetcher(data){
       if (data === null){
                  return <Loading />
@@ -48,15 +66,17 @@ selectArrivalCity(event){
 
 
 render(){
-  console.log(this.state.selectedDepartureCity);
+  console.log(this.state.selectedFromDate);
     return (
         
         <div>
             <Header />
             <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} arrival={this.state.selectedArrivalCity}  />
-            <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)} />
+            <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
+                      onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)}/>
 
         </div>
+        
     )
   }
 }

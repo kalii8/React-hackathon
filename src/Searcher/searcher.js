@@ -22,6 +22,8 @@ export default class Searcher extends React.Component {
                 To:<select onChange={this.props.onArrivalChange}>
                 {this.state.citiesTo.map((city) => <option> {city} </option>)}
                 </select>
+                From:<input type="date" onChange={this.props.onDateFromChange}/>
+                To:<input type="date" onChange={this.props.onDateToChange}/>
                 <button> </button>
             </div>
         )
