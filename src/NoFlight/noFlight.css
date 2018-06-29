@@ -1,0 +1,43 @@
+.noFlightBox {
+    margin: auto;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    overflow: hidden;
+    animation-name: loadFade;
+    animation-duration: 1s;
+}
+
+@keyframes loadFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.planecrash {
+    height: 80px;
+    animation-name: planeCrash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes planeCrash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
