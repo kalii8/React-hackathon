@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Fetcher from './Search/search.js';
 import Searcher from './Searcher/searcher.js';
+import Header from './Header/header.js';
 
 
 function FlightRow(props){
@@ -35,10 +36,12 @@ export default class App extends React.Component {
 
 
 render(){
-    return (<div>
-          <Fetcher render={this.renderResultFromFetcher} />
-          <Searcher />
-          </div>
+    return (
+        
+        <div>
+            <Header />
+            <Fetcher render={this.renderResultFromFetcher} />
+        </div>
     )
   }
 }
