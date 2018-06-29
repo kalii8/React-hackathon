@@ -13,7 +13,7 @@ export default class Fetcher extends React.Component {
 
     async componentDidMount(){
         const response = await fetch(
-            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=08/08/2018&dateTo=20/08/2018&limit=5`
+            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&limit=5`
         );
         const json = await response.json()
         this.setState({
@@ -23,12 +23,12 @@ export default class Fetcher extends React.Component {
 
     async componentDidUpdate(previousProps){
 
-        if (previousProps.departure === this.props.departure && previousProps.arrival === this.props.arrival){
+        if (previousProps.departure === this.props.departure && previousProps.arrival === this.props.arrival && previousProps.departureDate === this.props.departureDate && previousProps.arrivalDate === this.props.arrivalDate){
             return ;
         }
         
         const response = await fetch(
-            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=08/08/2018&dateTo=20/08/2018&limit=5`
+            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&limit=5`
         );
         const json = await response.json()
         this.setState({

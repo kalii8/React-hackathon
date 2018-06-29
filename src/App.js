@@ -6,6 +6,7 @@ import Searcher from './Searcher/searcher.js';
 import Header from './Header/header.js';
 import Loading from './Loading/loading.js';
 import Result from './Results/results.js';
+import { DateTime } from 'luxon';
 
 
 
@@ -20,8 +21,8 @@ export default class App extends React.Component {
           data: null,
           selectedDepartureCity: null,
           selectedArrivalCity: null,
-          selectedFromDate: null,
-          selectedToDate: null,
+          selectedFromDate: '2018-06-29',
+          selectedToDate: '2018-07-29',
       }
   }
 
@@ -50,28 +51,36 @@ selectToDate(event){
 }
 
 convertInputDate(date){
+  console.log(date);
+  
+return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
 
 }
 
   renderResultFromFetcher(data){
       if (data === null){
                  return <Loading />
+             } else if (data.length == 0){
+                return <div>No flights </div>;
              } else {
                   return (<div className="resultsPage">
                       {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
                    </div>
-          );
+                    );
+                  }
        }
-  }
+  
 
 
 render(){
-  console.log(this.state.selectedFromDate);
     return (
         
         <div>
             <Header />
-            <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} arrival={this.state.selectedArrivalCity}  />
+            <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} 
+                      arrival={this.state.selectedArrivalCity} 
+                      departureDate={this.convertInputDate(this.state.selectedFromDate)}
+                      arrivalDate={this.convertInputDate(this.state.selectedToDate)}  />
             <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
                       onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)}/>
 

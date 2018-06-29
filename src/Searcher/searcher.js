@@ -7,8 +7,8 @@ export default class Searcher extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            citiesFrom: ['Madrid', 'Rome', 'Riga', 'New York'],
-            citiesTo: ['Bari', 'Manila', 'London']
+            citiesFrom: ['Prague', 'Berlin', 'Warszaw', 'Pardubice'],
+            citiesTo: ['Bari', 'London' , 'Madrid', 'Rome', 'Valencia', 'Milano', 'Athens']
         }
     }
 
@@ -24,7 +24,6 @@ export default class Searcher extends React.Component {
                 </select>
                 From:<input type="date" onChange={this.props.onDateFromChange}/>
                 To:<input type="date" onChange={this.props.onDateToChange}/>
-                <button> </button>
             </div>
         )
 
