@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Fetcher from './Search/search.js';
+import Searcher from './Searcher/searcher.js';
 
 
 function FlightRow(props){
@@ -36,6 +37,7 @@ export default class App extends React.Component {
 render(){
     return (<div>
           <Fetcher render={this.renderResultFromFetcher} />
+          <Searcher />
           </div>
     )
   }
