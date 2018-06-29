@@ -22,8 +22,11 @@ export default class Fetcher extends React.Component {
     }
 
     async componentDidUpdate(previousProps){
-
-        if (previousProps.departure === this.props.departure && previousProps.arrival === this.props.arrival && previousProps.departureDate === this.props.departureDate && previousProps.arrivalDate === this.props.arrivalDate){
+        if (previousProps.departure === this.props.departure 
+            && previousProps.arrival === this.props.arrival 
+            && previousProps.departureDate === this.props.departureDate 
+            && previousProps.arrivalDate === this.props.arrivalDate 
+            && previousProps.directFlight === this.props.directFlight){
             return ;
         }
         

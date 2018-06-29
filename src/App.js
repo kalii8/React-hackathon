@@ -54,11 +54,11 @@ selectToDate(event){
 directFlight(event){
   if(!this.state.directFlights){
           this.setState({
-            direct: 1
+            directFlights: 1
   })
       } else {
         this.setState({
-          direct: 0
+          directFlights: 0
       })
     }
 }

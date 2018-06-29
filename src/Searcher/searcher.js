@@ -13,6 +13,7 @@ export default class Searcher extends React.Component {
     }
 
     render(){
+    
         return (
             <div>
                 <div className="searchRow">
@@ -32,14 +33,14 @@ export default class Searcher extends React.Component {
                 <div className="searchRow">
                     <span className="searcherCell">From date:</span>
                         <span className="searcherCell">
-                            <input type="date" onChange={this.props.onDateFromChange}/>
+                            <input type="date" onChange={this.props.onDateFromChange} value="2018-06-29"/>
                         </span>
                 </div>
                 <br/>
                 <div className="searchRow">
                     <span className="searcherCell">Until:</span>
                         <span className="searcherCell">
-                            <input type="date" onChange={this.props.onDateToChange}/>
+                            <input type="date" onChange={this.props.onDateToChange} value="2018-07-29"/>
                         </span>
                 </div>
                 <br/>
