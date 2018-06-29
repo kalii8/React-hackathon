@@ -13,7 +13,7 @@ export default class Fetcher extends React.Component {
 
     async componentDidMount(){
         const response = await fetch(
-            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&limit=5`
+            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&directFlights=${this.props.directFlight}&limit=5`
         );
         const json = await response.json()
         this.setState({
@@ -28,7 +28,7 @@ export default class Fetcher extends React.Component {
         }
         
         const response = await fetch(
-            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&limit=5`
+            `https://api.skypicker.com/flights?flyFrom=${this.props.departure}&to=${this.props.arrival}&dateFrom=${this.props.departureDate}&dateTo=${this.props.arrivalDate}&directFlights=${this.props.directFlight}&limit=5`
         );
         const json = await response.json()
         this.setState({

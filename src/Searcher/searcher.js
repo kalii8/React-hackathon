@@ -15,6 +15,7 @@ export default class Searcher extends React.Component {
     render(){
         return (
             <div>
+<<<<<<< HEAD
                 <div className="searchRow">
                     <span className="searcherCell">Departing from:</span>
                         <span className="searcherCell">
@@ -43,6 +44,18 @@ export default class Searcher extends React.Component {
                         </span>
                 <br/>
                 </div>
+=======
+                From:<input type="text" onChange={this.props.onDepartureChange} />
+                   {/* // {this.state.citiesFrom.map((city) => <option> {city} </option>)}
+                </select> */}
+
+                To:<input type="text" onChange={this.props.onArrivalChange} />
+                {/* {this.state.citiesTo.map((city) => <option> {city} </option>)}
+                </select> */}
+                From:<input type="date" onChange={this.props.onDateFromChange}/>
+                To:<input type="date" onChange={this.props.onDateToChange}/>
+                Direct flights only <input type="checkbox" onChange={this.props.onDirectChange}/>
+>>>>>>> f46c0fe2beec8579651efe409d5fa718396a9948
             </div>
         )
 
