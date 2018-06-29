@@ -1,0 +1,11 @@
+nav {
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.808);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+
+.navItem, .logo {
+    padding: 20px;
+}
