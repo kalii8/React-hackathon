@@ -23,6 +23,7 @@ export default class App extends React.Component {
           selectedArrivalCity: null,
           selectedFromDate: '2018-06-29',
           selectedToDate: '2018-07-29',
+          directFlights: 0
       }
   }
 
@@ -50,11 +51,20 @@ selectToDate(event){
   })
 }
 
-convertInputDate(date){
-  console.log(date);
-  
-return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
+directFlight(event){
+  if(!this.state.directFlights){
+          this.setState({
+            direct: 1
+  })
+      } else {
+        this.setState({
+          direct: 0
+      })
+    }
+}
 
+convertInputDate(date){
+return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
 }
 
   renderResultFromFetcher(data){
@@ -83,9 +93,11 @@ render() {
             <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} 
                       arrival={this.state.selectedArrivalCity} 
                       departureDate={this.convertInputDate(this.state.selectedFromDate)}
-                      arrivalDate={this.convertInputDate(this.state.selectedToDate)}  />
+                      arrivalDate={this.convertInputDate(this.state.selectedToDate)} 
+                      directFlight={this.state.directFlights} />
             <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
-                      onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)}/>
+                      onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)} 
+                      onDirectChange={this.directFlight.bind(this)}/>
 
         </div>
         

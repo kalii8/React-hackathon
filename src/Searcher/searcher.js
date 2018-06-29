@@ -24,6 +24,7 @@ export default class Searcher extends React.Component {
                 </select> */}
                 From:<input type="date" onChange={this.props.onDateFromChange}/>
                 To:<input type="date" onChange={this.props.onDateToChange}/>
+                Direct flights only <input type="checkbox" onChange={this.props.onDirectChange}/>
             </div>
         )
 
