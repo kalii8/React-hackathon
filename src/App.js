@@ -6,6 +6,7 @@ import Searcher from './Searcher/searcher.js';
 import Header from './Header/header.js';
 import Loading from './Loading/loading.js';
 import Result from './Results/results.js';
+import NoFlight from './NoFlight/noFlight.js';
 import { DateTime } from 'luxon';
 
 
@@ -19,8 +20,8 @@ export default class App extends React.Component {
 
       this.state = {
           data: null,
-          selectedDepartureCity: null,
-          selectedArrivalCity: null,
+          selectedDepartureCity: 'Prague',
+          selectedArrivalCity: 'Paris',
           selectedFromDate: '2018-06-29',
           selectedToDate: '2018-07-29',
           directFlights: 0
@@ -71,7 +72,7 @@ return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
       if (data === null){
                  return <Loading />
              } else if (data.length == 0){
-                return <div> </div>;
+                return <NoFlight />;
              } else {
                   return (
                     <div className="background">
