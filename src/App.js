@@ -17,10 +17,23 @@ export default class App extends React.Component {
       super(props);
 
       this.state = {
-          data: null
+          data: null,
+          selectedDepartureCity: null,
+          selectedArrivalCity: null
       }
-
   }
+
+selectDepartureCity(event){
+  this.setState({
+    selectedDepartureCity: event.target.value
+  });
+}
+
+selectArrivalCity(event){
+  this.setState({
+    selectedArrivalCity: event.target.value
+  });
+}
 
   renderResultFromFetcher(data){
       if (data === null){
@@ -35,11 +48,14 @@ export default class App extends React.Component {
 
 
 render(){
+  console.log(this.state.selectedDepartureCity);
     return (
         
         <div>
             <Header />
-            <Fetcher render={this.renderResultFromFetcher} />
+            <Fetcher render={this.renderResultFromFetcher} departure={this.state.selectedDepartureCity} arrival={this.state.selectedArrivalCity}  />
+            <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)} />
+
         </div>
     )
   }

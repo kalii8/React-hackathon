@@ -15,13 +15,14 @@ export default class Searcher extends React.Component {
     render(){
         return (
             <div>
-                From:<select>
+                From:<select onChange={this.props.onDepartureChange}>
                     {this.state.citiesFrom.map((city) => <option> {city} </option>)}
                 </select>
 
-                To:<select>
+                To:<select onChange={this.props.onArrivalChange}>
                 {this.state.citiesTo.map((city) => <option> {city} </option>)}
                 </select>
+                <button> </button>
             </div>
         )
 
