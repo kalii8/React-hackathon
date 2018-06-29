@@ -18,18 +18,14 @@ export default class Searcher extends React.Component {
                 <div className="searchRow">
                     <span className="searcherCell">Departing from:</span>
                         <span className="searcherCell">
-                            <select onChange={this.props.onDepartureChange}>
-                                {this.state.citiesFrom.map((city) => <option> {city} </option>)}
-                            </select>
+                            <input type ="text" onChange={this.props.onDepartureChange} />
                         </span>
                 </div>
                 <br/>
                 <div className="searchRow">
                     <span className="searcherCell">Arriving to:</span>
                         <span className="searcherCell">
-                            <select onChange={this.props.onArrivalChange}>
-                                {this.state.citiesTo.map((city) => <option> {city} </option>)}
-                            </select>
+                            <input type="text" onChange={this.props.onArrivalChange}/>
                         </span>
                 </div>
                 <br/>

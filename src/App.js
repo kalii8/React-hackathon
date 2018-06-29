@@ -61,12 +61,20 @@ return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
       if (data === null){
                  return <Loading />
              } else if (data.length == 0){
-                return <div>No flights </div>;
+                return <div> </div>;
              } else {
                   return (
                     <div className="background">
                         <div className="mainPage">
-                        <div class="resultHead"><span className="cell">From</span><span className="cell">To</span><span className="cell">Price</span><span className="cell">Departs</span><span className="cell">Arrives</span></div>
+                        <div class="resultHead">
+                            <span className="cell">From</span>
+                            <span className="cell">To</span>
+                            <span className="cell">Price</span>
+                            <span className="cell">Stops</span>
+                            <span className="cell">Departs</span>
+                            <span className="cell">Arrives</span>
+                            <span className="cell">On</span>
+                            </div>
                             {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
                         </div>
                     </div>
