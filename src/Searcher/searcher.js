@@ -15,13 +15,13 @@ export default class Searcher extends React.Component {
     render(){
         return (
             <div>
-                From:<select onChange={this.props.onDepartureChange}>
-                    {this.state.citiesFrom.map((city) => <option> {city} </option>)}
-                </select>
+                From:<input type="text" onChange={this.props.onDepartureChange} />
+                   {/* // {this.state.citiesFrom.map((city) => <option> {city} </option>)}
+                </select> */}
 
-                To:<select onChange={this.props.onArrivalChange}>
-                {this.state.citiesTo.map((city) => <option> {city} </option>)}
-                </select>
+                To:<input type="text" onChange={this.props.onArrivalChange} />
+                {/* {this.state.citiesTo.map((city) => <option> {city} </option>)}
+                </select> */}
                 From:<input type="date" onChange={this.props.onDateFromChange}/>
                 To:<input type="date" onChange={this.props.onDateToChange}/>
             </div>
