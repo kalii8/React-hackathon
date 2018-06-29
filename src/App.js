@@ -1,21 +1,42 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Fetcher from './Search/search.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+function FlightRow(props){
+  const flight=props.flight;
+  return <div > {flight.cityFrom} - {flight.cityTo} - {flight.conversion.EUR}</div>
+
 }
 
-export default App;
+export default class App extends React.Component {
+
+  constructor(props){
+      super(props);
+
+      this.state = {
+          data: null
+      }
+
+  }
+
+  renderResultFromFetcher(data){
+      if (data === null){
+                 return <div> Loading.. </div>
+             } else {
+                  return (<div>
+                      {data.map((flight) => <FlightRow key={flight.id} flight={flight}/>)}
+                   </div>
+          );
+       }
+  }
+
+
+render(){
+    return (<div>
+          <Fetcher render={this.renderResultFromFetcher} />
+          </div>
+    )
+  }
+}
