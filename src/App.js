@@ -65,7 +65,7 @@ return DateTime.fromFormat(date, 'yyyy-MM-dd').toFormat('dd/MM/yyyy');
              } else {
                   return (
                     <div className="background">
-                        <div className="resultsPage">
+                        <div className="mainPage">
                         <div class="resultHead"><span className="cell">From</span><span className="cell">To</span><span className="cell">Price</span><span className="cell">Departs</span><span className="cell">Arrives</span></div>
                             {data.map((flight) => <Result key={flight.id} flight={flight}/>)}
                         </div>
@@ -84,9 +84,12 @@ render() {
                       arrival={this.state.selectedArrivalCity} 
                       departureDate={this.convertInputDate(this.state.selectedFromDate)}
                       arrivalDate={this.convertInputDate(this.state.selectedToDate)}  />
-            <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
-                      onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)}/>
-
+            <div className="background">
+                <div className="mainPage">
+                    <Searcher onDepartureChange={this.selectDepartureCity.bind(this)} onArrivalChange={this.selectArrivalCity.bind(this)}
+                        onDateFromChange={this.selectFromDate.bind(this)} onDateToChange={this.selectToDate.bind(this)}/>
+                </div>
+            </div>    
         </div>
         
     )

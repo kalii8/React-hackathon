@@ -15,15 +15,38 @@ export default class Searcher extends React.Component {
     render(){
         return (
             <div>
-                From:<select onChange={this.props.onDepartureChange}>
-                    {this.state.citiesFrom.map((city) => <option> {city} </option>)}
-                </select>
-
-                To:<select onChange={this.props.onArrivalChange}>
-                {this.state.citiesTo.map((city) => <option> {city} </option>)}
-                </select>
-                From:<input type="date" onChange={this.props.onDateFromChange}/>
-                To:<input type="date" onChange={this.props.onDateToChange}/>
+                <div className="searchRow">
+                    <span className="searcherCell">Departing from:</span>
+                        <span className="searcherCell">
+                            <select onChange={this.props.onDepartureChange}>
+                                {this.state.citiesFrom.map((city) => <option> {city} </option>)}
+                            </select>
+                        </span>
+                </div>
+                <br/>
+                <div className="searchRow">
+                    <span className="searcherCell">Arriving to:</span>
+                        <span className="searcherCell">
+                            <select onChange={this.props.onArrivalChange}>
+                                {this.state.citiesTo.map((city) => <option> {city} </option>)}
+                            </select>
+                        </span>
+                </div>
+                <br/>
+                <div className="searchRow">
+                    <span className="searcherCell">From date:</span>
+                        <span className="searcherCell">
+                            <input type="date" onChange={this.props.onDateFromChange}/>
+                        </span>
+                </div>
+                <br/>
+                <div className="searchRow">
+                    <span className="searcherCell">Until:</span>
+                        <span className="searcherCell">
+                            <input type="date" onChange={this.props.onDateToChange}/>
+                        </span>
+                <br/>
+                </div>
             </div>
         )
 

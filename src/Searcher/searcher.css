@@ -1,0 +1,35 @@
+.searchRow {
+    height: 30px;
+    margin: 5px;
+    background-color: rgba(245, 245, 245, 0.781);
+    width: 400px;
+    display: flex;
+    align-content: center;
+    padding: 0px 20px 0px 20px;
+    box-shadow: 2px 2px 2px gainsboro;
+    animation-name: resultsIn;
+    animation-duration: 1s;
+    /* text-align: center; */
+    border-radius: 5px;
+}
+
+@keyframes resultsIn {
+    from {
+        margin-left: -1000px;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+
+select, input {
+    height: 20px;
+    width: 200px;
+    background-color: transparent;
+    /* border-style: none; */
+}
+
+.searcherCell {
+    width: 200px;
+}
